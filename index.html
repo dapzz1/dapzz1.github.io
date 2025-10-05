@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pendaftaran Mahasiswa Baru</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-container">
+      <img src="logo-untag.png" alt="Logo Universitas" class="logo">
+      <div class="header-text">
+        <h1>Form Pendaftaran</h1>
+        <p>Mahasiswa Baru</p>
+        <div class="underline"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== FORM ===== -->
+  <div class="container">
+    <form id="daftarForm" enctype="multipart/form-data">
+      
+      <!-- DATA PRIBADI -->
+      <fieldset>
+        <legend>📝 Data Pribadi</legend>
+        <label>Nama Lengkap:</label>
+        <input type="text" name="nama" required>
+
+        <label>NIK:</label>
+        <input type="text" name="nik" required>
+
+        <label>Tanggal Lahir:</label>
+        <input type="date" name="tgl_lahir" required>
+
+        <label>Jenis Kelamin:</label>
+        <select name="jk" required>
+          <option value="">--Pilih--</option>
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+
+        <label>Alamat:</label>
+        <textarea name="alamat" rows="3" required></textarea>
+
+        <label>No. HP:</label>
+        <input type="tel" name="no_hp" placeholder="08xxxxxxxxxx" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="contoh@email.com" required>
+      </fieldset>
+
+      <!-- DATA ORANG TUA -->
+      <fieldset>
+        <legend>👨‍👩‍👧 Data Orang Tua / Wali</legend>
+
+        <label>Nama Ayah:</label>
+        <input type="text" name="nama_ayah" required>
+
+        <label>Pekerjaan Ayah:</label>
+        <input type="text" name="pekerjaan_ayah" required>
+
+        <label>Pendidikan Ayah:</label>
+        <select name="pendidikan_ayah" required>
+          <option value="">--Pilih Pendidikan--</option>
+          <option>SD</option>
+          <option>SMP</option>
+          <option>SMA</option>
+          <option>S1</option>
+          <option>S2</option>
+        </select>
+
+        <label>Nama Ibu:</label>
+        <input type="text" name="nama_ibu" required>
+
+        <label>Pekerjaan Ibu:</label>
+        <input type="text" name="pekerjaan_ibu" required>
+
+        <label>Pendidikan Ibu:</label>
+        <select name="pendidikan_ibu" required>
+          <option value="">--Pilih Pendidikan--</option>
+          <option>SD</option>
+          <option>SMP</option>
+          <option>SMA</option>
+          <option>S1</option>
+          <option>S2</option>
+        </select>
+
+        <label>Penghasilan Orang Tua (per bulan):</label>
+        <select name="penghasilan" required>
+          <option value="">--Pilih--</option>
+          <option>< Rp 1.000.000</option>
+          <option>Rp 1.000.000 - 3.000.000</option>
+          <option>Rp 3.000.000 - 5.000.000</option>
+          <option>> Rp 5.000.000</option>
+        </select>
+      </fieldset>
+
+      <!-- FAKULTAS & PRODI -->
+      <fieldset>
+        <legend>🎓 Daftar Fakultas & Program Studi</legend>
+
+        <label>Pilih Fakultas:</label>
+        <select name="fakultas" id="fakultasSelect" required>
+          <option value="">-- Pilih Fakultas --</option>
+          <option>Fakultas Teknologi Informasi (FTI)</option>
+          <option>Fakultas Ekonomi dan Bisnis (FEB)</option>
+          <option>Fakultas Teknik (FT)</option>
+          <option>Fakultas Ilmu Sosial dan Ilmu Politik (FISIP)</option>
+          <option>Fakultas Hukum (FH)</option>
+          <option>Fakultas Kesehatan (FKes)</option>
+          <option>Fakultas Sains dan Teknologi (FST)</option>
+          <option>Fakultas Psikologi (FPsi)</option>
+          <option>Fakultas Keguruan dan Ilmu Pendidikan (FKIP)</option>
+          <option>Fakultas Seni dan Desain (FSD)</option>
+        </select>
+
+        <label>Pilih Program Studi:</label>
+        <select name="prodi" id="prodiSelect" required>
+          <option value="">-- Pilih Program Studi --</option>
+        </select>
+      </fieldset>
+
+      <!-- SCAN BERKAS -->
+      <fieldset>
+        <legend>📎 Scan Berkas / Dokumen Pendukung</legend>
+
+        <label>Upload Scan Ijazah SMA/sederajat:</label>
+        <input type="file" name="scan_ijazah" accept=".pdf,.jpg,.jpeg,.png" required>
+
+        <label>Upload Scan KTP/Kartu Pelajar:</label>
+        <input type="file" name="scan_ktp" accept=".pdf,.jpg,.jpeg,.png" required>
+
+        <label>Upload Foto Formal (3x4):</label>
+        <input type="file" name="foto_formal" accept=".jpg,.jpeg,.png" required>
+
+        <label>Surat Keterangan Sehat / Riwayat Medis (Opsional):</label>
+        <input type="file" name="surat_sehat" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Bukti Pembayaran Biaya Pendaftaran:</label>
+        <input type="file" name="bukti_pembayaran" accept=".pdf,.jpg,.jpeg,.png" required>
+      </fieldset>
+
+      <!-- PERNYATAAN -->
+      <fieldset>
+        <legend>✅ Pernyataan</legend>
+        <label>
+          <input type="checkbox" name="pernyataan" required>
+          Saya menyatakan data yang saya isi benar.
+        </label>
+      </fieldset>
+
+      <div class="button-group">
+        <button type="submit" class="primary-btn">Submit</button>
+      </div>
+    </form>
+
+    <!-- HASIL DATA -->
+    <div id="hasilData" class="hasil-data" style="display: none;">
+      <h2>📋 Hasil Data Pendaftaran</h2>
+      <div id="hasilContainer"></div>
+      <button id="kembaliBtn">Kembali ke Form</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
